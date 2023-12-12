@@ -116,7 +116,7 @@ export default function App() {
             <HeaderModule>
               <HeaderLogo onClick={goHome} className="header__logo">
                 <Text as="p" size="l" weight="bold">
-                  СИП. РБ
+                  Тест.UI
                 </Text>
               </HeaderLogo>
             </HeaderModule>

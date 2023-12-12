@@ -61,7 +61,7 @@ const ContentHeader = forwardRef((props, ref) => {
           className={`home__header--button truncate-btn ${
             leftSideActiveModal == 0 ? "active-button" : ""
           }`}
-          label="Расчет региона №1 Зеленая роща"
+          label="Расчет №1 длинное название"
           iconLeft={IconHamburger}
           view="ghost"
           size="xs"

@@ -61,7 +61,7 @@ export default function useSettingsData() {
   return [
     {
       id: 1,
-      label: "Основное",
+      label: "Калькулятор",
       leftSide: <IconSpeed size="xs" />,
       rightSide: <IconArrowRight size="xs" />,
       data: [
@@ -279,7 +279,7 @@ export default function useSettingsData() {
     },
     {
       id: 2,
-      label: "Отображение",
+      label: "Построение карт",
       badge: "normal",
       leftSide: <IconWorldFilled size="xs" />,
       rightSide: (
@@ -444,7 +444,7 @@ export default function useSettingsData() {
     },
     {
       id: 3,
-      label: "Система",
+      label: "Какой-то модуль расчета 1",
       badge: "success",
       leftSide: <IconWatchStroked size="xs" />,
       rightSide: (
@@ -668,7 +668,7 @@ export default function useSettingsData() {
     },
     {
       id: 4,
-      label: "БД",
+      label: "Еще модуль расчета 2",
       leftSide: <IconHelmet size="xs" />,
       rightSide: <IconArrowRight size="xs" />,
       data: [

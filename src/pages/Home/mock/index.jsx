@@ -1,3 +1,8 @@
+import { Button } from '@consta/uikit/Button';
+import { Layout } from '@consta/uikit/Layout';
+
+import { IconEdit } from '@consta/icons/IconEdit'
+import { IconTrash } from '@consta/icons/IconTrash'
 import { IconDiamond } from "@consta/icons/IconDiamond";
 import { IconWorldFilled } from "@consta/icons/IconWorldFilled";
 import { IconDrillingPartRightFilled } from "@consta/icons/IconDrillingPartRightFilled";
@@ -7,7 +12,7 @@ import { IconDinosaur } from "@consta/icons/IconDinosaur";
 export const calculationItems = [
   {
     id: 1,
-    label: "Расчет региона №1",
+    label: "Расчет №1 длинное название",
     leftIcon: IconDinosaur,
     date: "20.10.23",
   },
@@ -26,27 +31,27 @@ export const calculationItems = [
 export const dataItems = [
   {
     id: 1,
-    label: "Москва",
+    label: "Обьект 1",
     leftIcon: IconDinosaur,
     text: "Москва́ — столица России, город федерального значения, административный центр",
   },
   {
     id: 2,
     leftIcon: IconDinosaur,
-    label: "Казань",
+    label: "Обьект 2",
     text: "Казань — lorem ipsum",
   },
   {
     id: 3,
     leftIcon: IconDinosaur,
-    label: "Новосибирск",
+    label: "Обьект 3",
     text: "Новосибирск — lorem ipsum, lorem ipsum",
   },
 ];
 
 export const contextMenuItems = [
   {
-    label: "Таблица",
+    label: "Масштаб",
     switch: false,
   },
   {
@@ -62,18 +67,18 @@ export const contextMenuItems = [
 export const sameMenuItems = [
   {
     id: 1,
-    label: "Завод 1",
+    label: "Обьект 1",
     leftIcon: IconDinosaur,
   },
   {
     id: 2,
     leftIcon: IconDinosaur,
-    label: "Завод 2",
+    label: "Обьект 2",
   },
   {
     id: 3,
     leftIcon: IconDinosaur,
-    label: "Завод 3",
+    label: "Обьект 3",
   },
 ];
 
@@ -83,209 +88,209 @@ export const objectMenuItems = [
     data: [
       {
         id: 1,
-        label: "Фабрика 1",
+        label: "Обьект 1",
         leftIcon: IconDinosaur,
         data: [
           {
             id: 1,
-            label: "Завод 1",
+            label: "Обьект 1-1",
             leftIcon: IconDinosaur,
           },
           {
             id: 2,
             leftIcon: IconDinosaur,
-            label: "Завод 2",
+            label: "Обьект 1-2",
           },
           {
             id: 3,
             leftIcon: IconDinosaur,
-            label: "Завод 3",
+            label: "Обьект 1-3",
           },
         ],
       },
       {
         id: 2,
         leftIcon: IconDinosaur,
-        label: "Фабрика 2",
+        label: "Обьект 2",
         data: [
           {
             id: 1,
-            label: "Фабрика 2 | Завод 1",
+            label: "Обьект 2 | 1",
             leftIcon: IconDinosaur,
           },
           {
             id: 2,
             leftIcon: IconDinosaur,
-            label: "Фабрика 2 | Завод 2",
+            label: "Обьект 2 | 2",
           },
           {
             id: 3,
             leftIcon: IconDinosaur,
-            label: "Фабрика 2 | Завод 3",
+            label: "Обьект 2 | 3",
           },
         ],
       },
       {
         id: 3,
         leftIcon: IconDinosaur,
-        label: "Фабрика 3",
+        label: "Обьект 3",
         data: [
           {
             id: 1,
-            label: "Фабрика 3 | Завод 1",
+            label: "Обьект 3 | 1",
             leftIcon: IconDinosaur,
           },
           {
             id: 2,
             leftIcon: IconDinosaur,
-            label: "Фабрика 3 | Завод 2",
+            label: "Обьект 3 | 2",
           },
           {
             id: 3,
             leftIcon: IconDinosaur,
-            label: "Фабрика 3 | Завод 3",
+            label: "Обьект 3 | 3",
           },
           {
             id: 4,
             leftIcon: IconDinosaur,
-            label: "Фабрика 3 | Завод 4",
+            label: "Обьект 3 | 4",
           },
         ],
       },
       {
         id: 4,
         leftIcon: IconDinosaur,
-        label: "Фабрика 4",
+        label: "Обьект 4",
         data: [
           {
             id: 1,
-            label: "Фабрика 4 | Завод 1",
+            label: "Обьект 4 | Обьект 1",
             leftIcon: IconDinosaur,
           },
           {
             id: 2,
             leftIcon: IconDinosaur,
-            label: "Фабрика 4 | Завод 2",
+            label: "Обьект 4 | Обьект 2",
           },
           {
             id: 3,
             leftIcon: IconDinosaur,
-            label: "Фабрика 4 | Завод 3",
+            label: "Обьект 4 | Обьект 3",
           },
           {
             id: 5,
             leftIcon: IconDinosaur,
-            label: "Фабрика 4 | Завод 4",
+            label: "Обьект 4 | Обьект 4",
           },
         ],
       },
       {
         id: 7,
         leftIcon: IconDinosaur,
-        label: "Фабрика 7",
+        label: "Обьект 7",
         data: [
           {
             id: 1,
-            label: "Фабрика 7 | Завод 1",
+            label: "Обьект 7 | Обьект 1",
             leftIcon: IconDinosaur,
           },
           {
             id: 2,
             leftIcon: IconDinosaur,
-            label: "Фабрика 5 | Завод 2",
+            label: "Обьект 5 | Обьект 2",
           },
           {
             id: 3,
             leftIcon: IconDinosaur,
-            label: "Фабрика 5 | Завод 3",
+            label: "Обьект 5 | Обьект 3",
           },
         ],
       },
       {
         id: 6,
         leftIcon: IconDinosaur,
-        label: "Фабрика 6",
+        label: "Обьект 6",
         data: [
           {
             id: 1,
-            label: "Фабрика 5 | Завод 1",
+            label: "Обьект 5 | Обьект 1",
             leftIcon: IconDinosaur,
           },
           {
             id: 2,
             leftIcon: IconDinosaur,
-            label: "Фабрика 5 | Завод 2",
+            label: "Обьект 5 | Обьект 2",
           },
           {
             id: 3,
             leftIcon: IconDinosaur,
-            label: "Фабрика 5 | Завод 3",
+            label: "Обьект 5 | Обьект 3",
           },
         ],
       },
       {
         id: 5,
         leftIcon: IconDinosaur,
-        label: "Фабрика 5",
+        label: "Обьект 5",
         data: [
           {
             id: 1,
-            label: "Фабрика 5 | Завод 1",
+            label: "Обьект 5 | Обьект 1",
             leftIcon: IconDinosaur,
           },
           {
             id: 2,
             leftIcon: IconDinosaur,
-            label: "Фабрика 5 | Завод 2",
+            label: "Обьект 5 | Обьект 2",
           },
           {
             id: 3,
             leftIcon: IconDinosaur,
-            label: "Фабрика 5 | Завод 3",
+            label: "Обьект 5 | Обьект 3",
           },
         ],
       },
       {
         id: 8,
         leftIcon: IconDinosaur,
-        label: "Фабрика 8",
+        label: "Обьект 8",
         data: [
           {
             id: 1,
-            label: "Фабрика 8 | Завод 1",
+            label: "Обьект 8 | Обьект 1",
             leftIcon: IconDinosaur,
           },
           {
             id: 3,
             leftIcon: IconDinosaur,
-            label: "Фабрика 5 | Завод 3",
+            label: "Обьект 5 | Обьект 3",
           },
         ],
       },
       {
         id: 9,
         leftIcon: IconDinosaur,
-        label: "Фабрика 9",
+        label: "Обьект 9",
         data: [
           {
             id: 1,
-            label: "Фабрика 9 | Завод 1",
+            label: "Обьект 9 | Обьект 1",
             leftIcon: IconDinosaur,
           },
           {
             id: 2,
             leftIcon: IconDinosaur,
-            label: "Фабрика 9 | Завод 2",
+            label: "Обьект 9 | Обьект 2",
           },
           {
             id: 3,
             leftIcon: IconDinosaur,
-            label: "Фабрика 9 | Завод 3",
+            label: "Обьект 9 | Обьект 3",
           },
           {
             id: 3,
             leftIcon: IconDinosaur,
-            label: "Фабрика 9 | Завод 3",
+            label: "Обьект 9 | Обьект 3",
           },
         ],
       },
@@ -296,7 +301,7 @@ export const objectMenuItems = [
     data: [
       {
         id: 1,
-        label: "Компания 1",
+        label: "Обьект 1",
         leftIcon: IconDinosaur,
         data: [
           {
@@ -319,120 +324,120 @@ export const objectMenuItems = [
       {
         id: 2,
         leftIcon: IconDinosaur,
-        label: "Компания 2",
+        label: "Обьект 2",
         data: [
           {
             id: 1,
-            label: "Фабрика 2 | Завод 1",
+            label: "Обьект 2 | Обьект 1",
             leftIcon: IconDinosaur,
           },
           {
             id: 2,
             leftIcon: IconDinosaur,
-            label: "Фабрика 2 | Завод 2",
+            label: "Обьект 2 | Обьект 2",
           },
           {
             id: 3,
             leftIcon: IconDinosaur,
-            label: "Фабрика 2 | Завод 3",
+            label: "Обьект 2 | Обьект 3",
           },
         ],
       },
       {
         id: 3,
         leftIcon: IconDinosaur,
-        label: "Компания 3",
+        label: "Обьект 3",
         data: [
           {
             id: 1,
-            label: "Фабрика 3 | Завод 1",
+            label: "Обьект 3 | Обьект 1",
             leftIcon: IconDinosaur,
           },
           {
             id: 2,
             leftIcon: IconDinosaur,
-            label: "Фабрика 3 | Завод 2",
+            label: "Обьект 3 | Обьект 2",
           },
           {
             id: 3,
             leftIcon: IconDinosaur,
-            label: "Фабрика 3 | Завод 3",
+            label: "Обьект 3 | Обьект 3",
           },
           {
             id: 4,
             leftIcon: IconDinosaur,
-            label: "Фабрика 3 | Завод 4",
+            label: "Обьект 3 | Обьект 4",
           },
         ],
       },
       {
         id: 4,
         leftIcon: IconDinosaur,
-        label: "Компания 4",
+        label: "Обьект 4",
         data: [
           {
             id: 1,
-            label: "Фабрика 4 | Завод 1",
+            label: "Обьект 4 | Обьект 1",
             leftIcon: IconDinosaur,
           },
           {
             id: 2,
             leftIcon: IconDinosaur,
-            label: "Фабрика 4 | Завод 2",
+            label: "Обьект 4 | Обьект 2",
           },
           {
             id: 3,
             leftIcon: IconDinosaur,
-            label: "Фабрика 4 | Завод 3",
+            label: "Обьект 4 | Обьект 3",
           },
           {
             id: 5,
             leftIcon: IconDinosaur,
-            label: "Фабрика 4 | Завод 4",
+            label: "Обьект 4 | Обьект 4",
           },
         ],
       },
       {
         id: 7,
         leftIcon: IconDinosaur,
-        label: "Фабрика 7",
+        label: "Обьект 7",
         data: [
           {
             id: 1,
-            label: "Фабрика 7 | Завод 1",
+            label: "Обьект 7 | Обьект 1",
             leftIcon: IconDinosaur,
           },
           {
             id: 2,
             leftIcon: IconDinosaur,
-            label: "Фабрика 5 | Завод 2",
+            label: "Обьект 5 | Обьект 2",
           },
           {
             id: 3,
             leftIcon: IconDinosaur,
-            label: "Фабрика 5 | Завод 3",
+            label: "Обьект 5 | Обьект 3",
           },
         ],
       },
       {
         id: 6,
         leftIcon: IconDinosaur,
-        label: "Фабрика 6",
+        label: "Обьект 6",
         data: [
           {
             id: 1,
-            label: "Фабрика 5 | Завод 1",
+            label: "Обьект 5 | Обьект 1",
             leftIcon: IconDinosaur,
           },
           {
             id: 2,
             leftIcon: IconDinosaur,
-            label: "Фабрика 5 | Завод 2",
+            label: "Обьект 5 | Обьект 2",
           },
           {
             id: 3,
             leftIcon: IconDinosaur,
-            label: "Фабрика 5 | Завод 3",
+            label: "Обьект 5 | Обьект 3",
           },
         ],
       },
@@ -443,121 +448,121 @@ export const objectMenuItems = [
     data: [
       {
         id: 1,
-        label: "Corporation 1",
+        label: "Обьект 1",
         leftIcon: IconDinosaur,
         data: [
           {
             id: 1,
-            label: "Завод 1",
+            label: "Обьект 1",
             leftIcon: IconDinosaur,
           },
           {
             id: 2,
             leftIcon: IconDinosaur,
-            label: "Завод 2",
+            label: "Обьект 2",
           },
           {
             id: 3,
             leftIcon: IconDinosaur,
-            label: "Завод 3",
+            label: "Обьект 3",
           },
         ],
       },
       {
         id: 2,
         leftIcon: IconDinosaur,
-        label: "Corporation 2",
+        label: "Обьект 2",
         data: [
           {
             id: 1,
-            label: "Фабрика 2 | Завод 1",
+            label: "Обьект 2 | Обьект 1",
             leftIcon: IconDinosaur,
           },
           {
             id: 2,
             leftIcon: IconDinosaur,
-            label: "Фабрика 2 | Завод 2",
+            label: "Обьект 2 | Обьект 2",
           },
           {
             id: 3,
             leftIcon: IconDinosaur,
-            label: "Фабрика 2 | Завод 3",
+            label: "Обьект 2 | Обьект 3",
           },
         ],
       },
       {
         id: 3,
         leftIcon: IconDinosaur,
-        label: "Corporation 3",
+        label: "Обьект 3",
         data: [
           {
             id: 1,
-            label: "Фабрика 3 | Завод 1",
+            label: "Обьект 3 | Обьект 1",
             leftIcon: IconDinosaur,
           },
           {
             id: 2,
             leftIcon: IconDinosaur,
-            label: "Фабрика 3 | Завод 2",
+            label: "Обьект 3 | Обьект 2",
           },
           {
             id: 3,
             leftIcon: IconDinosaur,
-            label: "Фабрика 3 | Завод 3",
+            label: "Обьект 3 | Обьект 3",
           },
           {
             id: 4,
             leftIcon: IconDinosaur,
-            label: "Фабрика 3 | Завод 4",
+            label: "Обьект 3 | Обьект 4",
           },
         ],
       },
       {
         id: 4,
         leftIcon: IconDinosaur,
-        label: "Фабрика 4",
+        label: "Обьект 4",
         data: [
           {
             id: 1,
-            label: "Фабрика 4 | Завод 1",
+            label: "Обьект 4 | Обьект 1",
             leftIcon: IconDinosaur,
           },
           {
             id: 2,
             leftIcon: IconDinosaur,
-            label: "Фабрика 4 | Завод 2",
+            label: "Обьект 4 | Обьект 2",
           },
           {
             id: 3,
             leftIcon: IconDinosaur,
-            label: "Фабрика 4 | Завод 3",
+            label: "Обьект 4 | Обьект 3",
           },
           {
             id: 5,
             leftIcon: IconDinosaur,
-            label: "Фабрика 4 | Завод 4",
+            label: "Обьект 4 | Обьект 4",
           },
         ],
       },
       {
         id: 7,
         leftIcon: IconDinosaur,
-        label: "Фабрика 7",
+        label: "Обьект 7",
         data: [
           {
             id: 1,
-            label: "Фабрика 7 | Завод 1",
+            label: "Обьект 7 | Обьект 1",
             leftIcon: IconDinosaur,
           },
           {
             id: 2,
             leftIcon: IconDinosaur,
-            label: "Фабрика 5 | Завод 2",
+            label: "Обьект 5 | Обьект 2",
           },
           {
             id: 3,
             leftIcon: IconDinosaur,
-            label: "Фабрика 5 | Завод 3",
+            label: "Обьект 5 | Обьект 3",
           },
         ],
       },
@@ -626,6 +631,111 @@ export const choiceGroupData = [
     icon: <IconWorldFilled size="s" />,
     activeIcon: <IconWorldFilled size="s" view="link" />,
   },
+];
+
+export const ListOfDistrictsFilter = [
+  {
+    id: 'location-filter',
+    name: 'Все',
+    field: 'location',
+    filterer: (value) => (value),
+  }
+]
+
+export const ListOfDistrictsRows = [
+  {
+    id: "1",
+    location: "Северное",
+    year: "1982",
+    type: "Открытое",
+    population: "5000",
+  },
+  {
+    id: "2",
+    location: "Северное",
+    year: "1982",
+    type: "Открытое",
+    population: "5000",
+  },
+  {
+    id: "3",
+    location: "Северное",
+    year: "1982",
+    type: "Открытое",
+    population: "5000",
+  },
+  {
+    id: "4",
+    location: "Северное",
+    year: "1982",
+    type: "Открытое",
+    population: "5000",
+  },
+  {
+    id: "5",
+    location: "Северное",
+    year: "1982",
+    type: "Открытое",
+    population: "5000",
+  },
+  {
+    id: "6",
+    location: "Северное",
+    year: "1982",
+    type: "Открытое",
+    population: "5000",
+  },
+  {
+    id: "7",
+    location: "Северное",
+    year: "1982",
+    type: "Открытое",
+    population: "5000",
+  },
+  {
+    id: "8",
+    location: "Северное",
+    year: "1982",
+    type: "Открытое",
+    population: "5000",
+  },
+  {
+    id: "9",
+    location: "Северное",
+    year: "1982",
+    type: "Открытое",
+    population: "5000",
+  },
+];
+
+export const ListOfDistrictsColumns = [
+  {
+    title: "Местоположение",
+    accessor: "location",
+  },
+  {
+    title: "Год открытия",
+    accessor: "year",
+  },
+  {
+    title: "Тип",
+    accessor: "type",
+  },
+  {
+    title: "население, МЛН.Т",
+    align: 'right',
+    accessor: "population",
+  },
+  {
+    title: "Действия",
+    align: 'right',
+    renderCell: () => (
+      <Layout style={{ gap: 5 }}>
+        <Button label="Редактировать" iconLeft={IconEdit} size="xs" view="ghost" />
+        <Button label="Удалить" iconLeft={IconTrash} onlyIcon size="xs" view="ghost" />
+      </Layout>
+    ),
+  }
 ];
 
 export const trimItemsMock = [
