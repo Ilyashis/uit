@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter";
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 319px) {
+  #root {
+    display: none;
+  }
+
+  body {
+    &:after {
+      content: "Наш сайт в настоящее время не работает на вашем устройстве, используйте устройство с большим экраном. Приносим свои извинения за доставленные неудобства.";
+      width: inherit;
+      height: 100%;
+      position: fixed;
+      z-index: 100;
+      font-size: 20px;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+
+.table-context {
+  width: max-content !important;
+}
+
+.active-cell {
+  cursor: pointer;
+  width: 100%;
+  border: 1px solid transparent;
+}
+
+// .active-cell:active {
+//   border: 1px solid #0078d2;
+//   border-radius: 5px;
+// }
+
+.cell-is-active {
+  border: 1px solid #0078d2 !important;
+  border-radius: 5px !important;
+}
+
+.focus-cell {
+  border: 1px solid #0078d2;
+  border-radius: 5px;
+  background-color: white;
+}
