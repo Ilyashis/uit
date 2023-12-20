@@ -44,32 +44,32 @@ export default function App() {
   // Navbar Menu links
   const menuItems = [
     {
-      label: "Главная",
+      label: "Проекты",
       onClick: () => {
         navigate('/')
         setActiveMenuItem(0)
         setIsSidebarOpen(false)
       },
       active: activeMenuItem === 0
-    },
-    {
-      label: "Аналитика",
-      onClick: () => {
-        navigate('/analytics')
-        setActiveMenuItem(1)
-        setIsSidebarOpen(false)
-      },
-      active: activeMenuItem === 1
-    },
-    {
-      label: "Справочники",
-      onClick: () => {
-        navigate('/references')
-        setActiveMenuItem(2)
-        setIsSidebarOpen(false)
-      },
-      active: activeMenuItem === 2
     }
+    // {
+    //   label: "Аналитика",
+    //   onClick: () => {
+    //     navigate('/analytics')
+    //     setActiveMenuItem(1)
+    //     setIsSidebarOpen(false)
+    //   },
+    //   active: activeMenuItem === 1
+    // },
+    // {
+    //   label: "Справочники",
+    //   onClick: () => {
+    //     navigate('/references')
+    //     setActiveMenuItem(2)
+    //     setIsSidebarOpen(false)
+    //   },
+    //   active: activeMenuItem === 2
+    // }
   ];
 
   useEffect(() => {
@@ -94,13 +94,9 @@ export default function App() {
         setActiveMenuItem(0)
         break;
 
-      case '/analytics':
-        setActiveMenuItem(1)
-        break;
-
-      case '/references':
-        setActiveMenuItem(2)
-        break;
+//      case '/references':
+//        setActiveMenuItem(2)
+//        break;
 
       default:
         break;
@@ -116,7 +112,7 @@ export default function App() {
             <HeaderModule>
               <HeaderLogo onClick={goHome} className="header__logo">
                 <Text as="p" size="l" weight="bold">
-                  Тест.UI
+                  Геомейт
                 </Text>
               </HeaderLogo>
             </HeaderModule>

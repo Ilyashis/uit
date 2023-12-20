@@ -9,18 +9,24 @@ import {
 import RootLayout from '@components/layouts'
 
 // Pages
-import Home from '@pages/Home'
-import Analytics from '@pages/Analytics'
-import References from '@pages/References'
+import Indexpage from '@pages/Indexpage'
+import Projects from '@pages/Projects'
+import Projecttest from '@pages/Projecttest'
+import Interpret from '@pages/Interpret'
+import Cube from '@pages/Cube'
+import Import from '@pages/Import'
 import NotFound from '@pages/NotFound'
 
 export default function App() {
   const routes = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<RootLayout />}>
-        <Route index element={<Home />} />
-        <Route path="analytics" element={<Analytics />} />
-        <Route path="references" element={<References />} />
+      <Route path="/">
+        <Route index element={<Indexpage />} />
+        <Route path="projects" element={<Projects />} />
+        <Route path="projecttest" element={<Projecttest />} />
+        <Route path="interpret" element={<Interpret />} />
+        <Route path="cube" element={<Cube />} />
+        <Route path="import" element={<Import />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     )
