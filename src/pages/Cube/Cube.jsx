@@ -1,12 +1,12 @@
 
 import React, { useState } from 'react';
 
-import './d2353f987179b9fa88b8.css';
-import './28360769f05063d61370.css';
-import './2e62e44cd0ed569adfee.css';
-import './012a0cf1d6b5333cad0e.css';
-import './072c49a921a1de6442db.css';
-import './one.css';
+//import './d2353f987179b9fa88b8.css';
+//import './28360769f05063d61370.css';
+//import './2e62e44cd0ed569adfee.css';
+//import './012a0cf1d6b5333cad0e.css';
+//import './072c49a921a1de6442db.css';
+//import './one.css';
 
 export default function Cube() {
 const [isProcessing, setIsProcessing] = useState(false);

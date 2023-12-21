@@ -11,6 +11,7 @@ export default function Indexpage() {
         <a href="/projecttest">Страница проекта</a> <br />
         <a href="/interpret">Интерпретация</a> <br />
         <a href="/cube">3D вид</a> <br />
+        <a href="/corrshem">Корреляционная схема</a> <br />
         <a href="/import">Импорт</a> <br />
 
       </div>
