@@ -192,7 +192,7 @@ export default function Home() {
           }}
         >
           <img src="/assets/svg/bg-map.svg" />
-
+          <div className="homeScreeni" id="hScr"></div>
           <Layout direction="column" className="home__content">
             {windowWidth >= 640 ? (
               <ContentHeader
@@ -286,4 +286,6 @@ export default function Home() {
       </Layout>
     </>
   );
+
+
 }

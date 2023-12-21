@@ -1,6 +1,4 @@
 
-import React, { useState } from 'react';
-
 import './d2353f987179b9fa88b8.css';
 import './28360769f05063d61370.css';
 import './2e62e44cd0ed569adfee.css';
@@ -9,7 +7,7 @@ import './072c49a921a1de6442db.css';
 import './one.css';
 
 export default function Cube() {
-const [isProcessing, setIsProcessing] = useState(false);
+
 
   return (
     <div>
@@ -137,7 +135,7 @@ const [isProcessing, setIsProcessing] = useState(false);
                                             </svg>
                                         </span>
                                     </button></label>
-                                <label id="GIS" className="ChoiceGroup-Label MixFocus" onClick={run()}>[ГИС-1]
+                                <label id="GIS" className="ChoiceGroup-Label MixFocus" onClick={run}>[ГИС-1]
                                 </label>
                                 <label className="ChoiceGroup-Label MixFocus"><input type="radio"
                                         className="ChoiceGroup-Input" name="ChoiceGroup"
@@ -234,7 +232,7 @@ const [isProcessing, setIsProcessing] = useState(false);
                                             </svg>
                                         </span>
                                     </button></label>
-                                <label className="ChoiceGroup-Label MixFocus" onClick={run()}>[Маркер-1]
+                                <label className="ChoiceGroup-Label MixFocus" onClick={run}>[Маркер-1]
                                 </label>
                                 <label className="ChoiceGroup-Label MixFocus"><input type="radio"
                                         className="ChoiceGroup-Input" name="ChoiceGroup"
@@ -325,13 +323,11 @@ const [isProcessing, setIsProcessing] = useState(false);
     </div>
 </footer>
 
-
-<div id="progress" style={{ zIndex: '1000', position: 'relative', left: '0', right: '0', display: isProcessing ? 'block' : 'none', marginBottom:'-5px' }}>
+<div id="progress" style={{zIndex: '1000', position: 'relative', left: '0', right: '0', display: 'none', marginBottom:'-5px'}}>
         <div className="meter">
-            <span style={{ width: '100%' }}><span className="progress"></span></span>
+            <span style={{width:'100%'}}><span className="progress"></span></span>
         </div>
-</div>  
-
+</div>
 
 
 
@@ -339,6 +335,7 @@ const [isProcessing, setIsProcessing] = useState(false);
 </div>
 
   );
+
 
 
 
@@ -486,17 +483,13 @@ const [isProcessing, setIsProcessing] = useState(false);
       favDialog.showModal();
   }
 
-
-
   function run(tf) {
-    if (tf || window.confirm("Будет запущено выполнение длительной операции.\n Продолжить?")) {
-        setIsProcessing(true);
-        // Симулируем длительную операцию с помощью setTimeout
-        setTimeout(() => {
-            setIsProcessing(false);
-        }, 4000); // например, 4 секунды для задержки
-    }
-}
+      if (tf || confirm("Будет запущено выполнение длительной операции.\n Продолжить?")) {
+          let progress = document.getElementById("progress");
+          progress.style.display = "none"
+          setTimeout(() => { progress.style.display = "" }, 4);
+      }
+  }
 
   // set the dimensions and margins of the graph
   var margin = { top: 24, right: 24, bottom: 24, left: 24 },
@@ -684,9 +677,6 @@ const [isProcessing, setIsProcessing] = useState(false);
           m.style.backgroundColor = "#003f5c";
       wellCount = 0;
   }
-
-
-  
 
 
 }

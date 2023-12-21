@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
+
 import PropTypes from "prop-types";
 
 import { Button } from "@consta/uikit/Button";
@@ -12,7 +13,27 @@ import { IconResize } from "@consta/icons/IconResize";
 
 import { Rnd } from "react-rnd";
 
+// Функция генерации  точек
+function generateRandomCoordsAndNames(num) {
+  const points = [];
+  const names = ['Point A', 'Point B', 'Point C', 'Point D', 'Point E'];  // Пример случайных названий
+
+  for (let i = 0; i < num; i++) {
+    const x = Math.floor(Math.random() * 400); // Генерируем случайную координату x в пределах 0-400
+    const y = Math.floor(Math.random() * 400); // Генерируем случайную координату y в пределах 0-400
+    const name = names[Math.floor(Math.random() * names.length)]; // Выбираем случайное название из массива
+    points.push({ x, y, name, active: false });
+  }
+
+  return points;
+}
+
+
+
+
 export default function Footer(props) {
+
+
   const {
     isObjectModalFullHeight,
     isSettingsModalFullHeight,
@@ -41,6 +62,99 @@ export default function Footer(props) {
   } else {
     calculateMapLayerPopupWidth = `${windowWidth - 24}`;
   }
+  
+// canvas==============================
+// canvas==============================
+// canvas==============================  
+
+const canvasRef = useRef(null);
+  const [points, setPoints] = useState(generateRandomCoordsAndNames(5));
+  const [scale, setScale] = useState(1);
+  const [translate, setTranslate] = useState({ x: 0, y: 0 }); // Change from offset to translate
+  const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+
+
+  const handleCanvasClick = (event) => {
+    const canvas = canvasRef.current;
+    const rect = canvas.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    const clickedPoint = points.find((point) => {
+      return x >= point.x - 5 && x <= point.x + 5 && y >= point.y - 5 && y <= point.y + 5;
+    });
+
+    if (clickedPoint) {
+      const homeScreenDiv = document.getElementById('hScr');
+      homeScreenDiv.innerText = 'Выбрана точка: ' + clickedPoint.name;
+    }
+  };
+
+  const handleMouseWheel = (event) => {
+    event.preventDefault();
+    const canvas = canvasRef.current;
+    const rect = canvas.getBoundingClientRect();
+    const offsetX = event.clientX - rect.left;
+    const offsetY = event.clientY - rect.top;
+    const newScale = event.deltaY > 0 ? scale * 1.1 : scale / 1.1;
+    const deltaX = offsetX * (scale - newScale);
+    const deltaY = offsetY * (scale - newScale);
+    setScale(newScale);
+    setTranslate((prevTranslate) => ({
+      x: prevTranslate.x + deltaX,
+      y: prevTranslate.y + deltaY,
+    }));
+  };
+  
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setDragStart({ x: e.clientX, y: e.clientY });
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+  const handleMouseMove = (e) => {
+    if (isDragging) {
+      setTranslate({
+        x: translate.x + e.clientX - dragStart.x, // Update translate instead of offset
+        y: translate.y + e.clientY - dragStart.y  // Update translate instead of offset
+      });
+      setDragStart({ x: e.clientX, y: e.clientY });
+    }
+  };
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    points.forEach((point, index) => {
+      ctx.fillStyle = point.active ? 'blue' : 'red';
+      ctx.beginPath();
+      ctx.arc(
+        point.x * scale + translate.x,
+        point.y * scale + translate.y,
+        5,
+        0,
+        2 * Math.PI
+  
+      );
+      ctx.fill();
+      ctx.font = '12px Arial';
+      ctx.fillText(
+        point.name,
+        point.x * scale + translate.x + 8,
+        point.y * scale + translate.y - 8
+  
+      );
+    });
+
+  
+  }, [points, scale, translate]);
+
 
   return (
     <Layout className="home__footer">
@@ -146,7 +260,19 @@ export default function Footer(props) {
         </Layout>
         <Layout className="home__footer--map-layer--content">
           <Text size="s" className="home__footer--map-layer--content--text">
-            Объектов пока нет
+          <canvas
+            ref={canvasRef}
+            id="myCanvas"
+            width="400"
+            height="400"
+            style={{ border: '1px solid black' }}
+            onClick={handleCanvasClick}
+            onMouseOut={() => setPoints(points.map(point => ({ ...point, active: false })))}
+            onWheel={handleMouseWheel}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove} // Update the event handler for mouse move
+            onMouseUp={handleMouseUp}
+          ></canvas>
           </Text>
         </Layout>
       </Rnd>
@@ -164,3 +290,5 @@ Footer.propTypes = {
   setTableHeight: PropTypes.func,
   RightSideActiveModal: PropTypes.bool,
 };
+//////////////Applications
+//
