@@ -2,7 +2,7 @@
   "name": "sip",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://Ilyashis.github.com/uit/",
+  "homepage": "https://Ilyashis.github.com/uit",
   "type": "module",
   "scripts": {
     "dev": "vite",

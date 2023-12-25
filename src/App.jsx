@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 // Pages
 import Indexpage from "@pages/Indexpage";
@@ -11,15 +11,9 @@ import Cube3D from "@pages/Cube3D";
 import Uvaska from "@pages/Uvaska";
 import Interpretation from "@pages/Interpretation";
 
-/*          <Route path="/interpretation" element={<Interpretation />} />
-          <Route path="/corrshem" element={<Corrshem />} />
-          <Route path="/cube3d" element={<Cube3D />} />
-          <Route path="/import" element={<Import />} />
-          <Route path="/uvaska" element={<Uvaska />} />*/
-
 export default function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route path="/" element={<Indexpage />} />
         <Route path="/projects" element={<Projects />} />
@@ -31,6 +25,6 @@ export default function App() {
         <Route path="/projects/uvaska" element={<Uvaska />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
