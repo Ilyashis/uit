@@ -23,7 +23,7 @@ export default function App() {
   const routes = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/uit/">
-        <Route index path="/uit/" element={<Indexpage />} />
+        <Route index element={<Indexpage />} />
         <Route path="/uit/projects" element={<Projects />} />
         <Route path="/uit/interpret" element={<Interpret />} />
         <Route path="/uit/interpretation" element={<Interpretation />} />
