@@ -1,4 +1,6 @@
-export default function Import() {
+import React, { useRef, useEffect } from "react";
+
+export default function cube3d() {
   return (
     <>
       <div style={{ margin: 24 }}>

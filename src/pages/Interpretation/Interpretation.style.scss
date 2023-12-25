@@ -1,5 +1,22 @@
 @import "../../styles/mixin";
-
+.interpretation-syg {
+  .linePath {
+    cursor: pointer;
+    fill: #0d6cb5;
+    stroke-width: 4px;
+    &:hover {
+      stroke: #b7bbc7;
+      stroke-width: 8px;
+    }
+    &.active {
+      stroke: #be3c56;
+      &:hover {
+        stroke: #b7bbc7;
+        stroke-width: 8px;
+      }
+    }
+  }
+}
 .point {
   cursor: pointer;
   fill: #0d6cb5;
@@ -17,16 +34,27 @@
     }
   }
 }
-.Screenl {
+.ScreenItem {
   width: 100%;
   height: 100%;
   padding: 48px 12px;
+}
+.InterpretationNone {
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+}
+
+.ScreenItemInterpretation {
   display: flex;
   gap: 12px;
   overflow: auto;
-  .well {
-    background: url("./mock/well.png") no-repeat;
-    width: 392px;
+  .IntRaz {
+    background: url("./mock/razi.png") no-repeat;
+    width: 900px;
     height: 1200px;
   }
 }

@@ -1,20 +1,82 @@
 // Layout Components
-import RootLayout from '@components/layouts'
+import RootLayout from "@components/layouts";
+import { Button } from "@consta/uikit/Button";
+import { Card } from "@consta/uikit/Card";
+import { Layout } from "@consta/uikit/Layout";
+import { Text } from "@consta/uikit/Text";
+import { Icon } from "@consta/uikit/Icon";
+import { IconArrowLeft } from "@consta/icons/IconArrowLeft";
+import { IconArrowRight } from "@consta/icons/IconArrowRight";
 
 export default function Indexpage() {
   return (
     <>
       <RootLayout />
-      <div style={{ margin: 24 }}>
-        <h1></h1>
-        <a href="/projects">Список проектов</a> <br />
-        <a href="/projecttest">Страница проекта</a> <br />
-        <a href="/interpret">Интерпретация</a> <br />
-        <a href="/cube">3D вид</a> <br />
-        <a href="/corrshem">Корреляционная схема</a> <br />
-        <a href="/import">Импорт</a> <br />
-
-      </div>
+      <Layout
+        direction="column"
+        style={{ margin: "24px auto", width: "1200px" }}
+      >
+        <Layout flex={1}>
+          <h2 style={{ marginLeft: "12px" }}>Проекты</h2>
+        </Layout>
+        <Layout style={{ margin: "24px 0", gap: "24px" }}>
+          <Card
+            verticalSpace="xl"
+            horizontalSpace="xl"
+            form="round"
+            style={{ width: "100%" }}
+          >
+            <Layout>
+              <h4>Тестовый проект №1</h4>
+            </Layout>
+            <Layout>ГПН-Хантос</Layout>
+            <br />
+            <Layout>
+              <a href="/uit/projects">
+                <Button label="Открыть" iconRight={IconArrowRight} size="xs" />
+              </a>
+            </Layout>
+          </Card>
+        </Layout>
+        <Layout style={{ margin: "24px 0", gap: "24px" }}>
+          <Card
+            verticalSpace="xl"
+            horizontalSpace="xl"
+            form="round"
+            style={{ width: "100%" }}
+          >
+            <Layout>
+              <h4>Тест</h4>
+            </Layout>
+            <Layout>ГПН-Хантос</Layout>
+            <br />
+            <Layout>
+              <a href="/uit/projects">
+                <Button label="Открыть" iconRight={IconArrowRight} size="xs" />
+              </a>
+            </Layout>
+          </Card>
+        </Layout>
+        <Layout style={{ margin: "24px 0", gap: "24px" }}>
+          <Card
+            verticalSpace="xl"
+            horizontalSpace="xl"
+            form="round"
+            style={{ width: "100%" }}
+          >
+            <Layout>
+              <h4>Тестовый проект №2</h4>
+            </Layout>
+            <Layout>ГПН-Хантос</Layout>
+            <br />
+            <Layout>
+              <a href="/uit/projects">
+                <Button label="Открыть" iconRight={IconArrowRight} size="xs" />
+              </a>
+            </Layout>
+          </Card>
+        </Layout>
+      </Layout>
     </>
   );
 }

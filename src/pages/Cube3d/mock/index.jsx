@@ -1,8 +1,8 @@
-import { Button } from '@consta/uikit/Button';
-import { Layout } from '@consta/uikit/Layout';
+import { Button } from "@consta/uikit/Button";
+import { Layout } from "@consta/uikit/Layout";
 
-import { IconEdit } from '@consta/icons/IconEdit'
-import { IconTrash } from '@consta/icons/IconTrash'
+import { IconEdit } from "@consta/icons/IconEdit";
+import { IconTrash } from "@consta/icons/IconTrash";
 import { IconDiamond } from "@consta/icons/IconDiamond";
 import { IconWorldFilled } from "@consta/icons/IconWorldFilled";
 import { IconDrillingPartRightFilled } from "@consta/icons/IconDrillingPartRightFilled";
@@ -12,19 +12,19 @@ import { IconDinosaur } from "@consta/icons/IconDinosaur";
 export const calculationItems = [
   {
     id: 1,
-    label: "Интерпретация №1 длинное название",
+    label: "3D вид - визуализация 1",
     leftIcon: IconDinosaur,
     date: "20.10.23",
   },
   {
     id: 2,
     leftIcon: IconDinosaur,
-    label: "Интерпретация №2",
+    label: "3D вид - визуализация №2",
   },
   {
     id: 3,
     leftIcon: IconDinosaur,
-    label: "Интерпретация №2",
+    label: "3D вид - визуализация №2",
   },
 ];
 
@@ -635,12 +635,12 @@ export const choiceGroupData = [
 
 export const ListOfDistrictsFilter = [
   {
-    id: 'location-filter',
-    name: 'Все',
-    field: 'location',
-    filterer: (value) => (value),
-  }
-]
+    id: "location-filter",
+    name: "Все",
+    field: "location",
+    filterer: (value) => value,
+  },
+];
 
 export const ListOfDistrictsRows = [
   {
@@ -723,19 +723,30 @@ export const ListOfDistrictsColumns = [
   },
   {
     title: "население, МЛН.Т",
-    align: 'right',
+    align: "right",
     accessor: "population",
   },
   {
     title: "Действия",
-    align: 'right',
+    align: "right",
     renderCell: () => (
       <Layout style={{ gap: 5 }}>
-        <Button label="Редактировать" iconLeft={IconEdit} size="xs" view="ghost" />
-        <Button label="Удалить" iconLeft={IconTrash} onlyIcon size="xs" view="ghost" />
+        <Button
+          label="Редактировать"
+          iconLeft={IconEdit}
+          size="xs"
+          view="ghost"
+        />
+        <Button
+          label="Удалить"
+          iconLeft={IconTrash}
+          onlyIcon
+          size="xs"
+          view="ghost"
+        />
       </Layout>
     ),
-  }
+  },
 ];
 
 export const trimItemsMock = [

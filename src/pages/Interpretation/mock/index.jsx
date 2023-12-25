@@ -1,8 +1,8 @@
-import { Button } from '@consta/uikit/Button';
-import { Layout } from '@consta/uikit/Layout';
+import { Button } from "@consta/uikit/Button";
+import { Layout } from "@consta/uikit/Layout";
 
-import { IconEdit } from '@consta/icons/IconEdit'
-import { IconTrash } from '@consta/icons/IconTrash'
+import { IconEdit } from "@consta/icons/IconEdit";
+import { IconTrash } from "@consta/icons/IconTrash";
 import { IconDiamond } from "@consta/icons/IconDiamond";
 import { IconWorldFilled } from "@consta/icons/IconWorldFilled";
 import { IconDrillingPartRightFilled } from "@consta/icons/IconDrillingPartRightFilled";
@@ -635,12 +635,12 @@ export const choiceGroupData = [
 
 export const ListOfDistrictsFilter = [
   {
-    id: 'location-filter',
-    name: 'Все',
-    field: 'location',
-    filterer: (value) => (value),
-  }
-]
+    id: "location-filter",
+    name: "Все",
+    field: "location",
+    filterer: (value) => value,
+  },
+];
 
 export const ListOfDistrictsRows = [
   {
@@ -723,32 +723,43 @@ export const ListOfDistrictsColumns = [
   },
   {
     title: "население, МЛН.Т",
-    align: 'right',
+    align: "right",
     accessor: "population",
   },
   {
     title: "Действия",
-    align: 'right',
+    align: "right",
     renderCell: () => (
       <Layout style={{ gap: 5 }}>
-        <Button label="Редактировать" iconLeft={IconEdit} size="xs" view="ghost" />
-        <Button label="Удалить" iconLeft={IconTrash} onlyIcon size="xs" view="ghost" />
+        <Button
+          label="Редактировать"
+          iconLeft={IconEdit}
+          size="xs"
+          view="ghost"
+        />
+        <Button
+          label="Удалить"
+          iconLeft={IconTrash}
+          onlyIcon
+          size="xs"
+          view="ghost"
+        />
       </Layout>
     ),
-  }
+  },
 ];
 
 export const trimItemsMock = [
   {
-    label: "Слой 1",
+    label: "Горизонт 1",
     id: 1,
   },
   {
-    label: "Слой 2",
+    label: "Горизонт 2",
     id: 2,
   },
   {
-    label: "Слой 3",
+    label: "Горизонт 3",
     id: 3,
   },
 ];

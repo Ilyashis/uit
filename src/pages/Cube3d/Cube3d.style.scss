@@ -1,5 +1,23 @@
 @import "../../styles/mixin";
 
+.interpretation-syg {
+  .linePath {
+    cursor: pointer;
+    fill: #0d6cb5;
+    stroke-width: 4px;
+    &:hover {
+      stroke: #b7bbc7;
+      stroke-width: 8px;
+    }
+    &.active {
+      stroke: #be3c56;
+      &:hover {
+        stroke: #b7bbc7;
+        stroke-width: 8px;
+      }
+    }
+  }
+}
 .point {
   cursor: pointer;
   fill: #0d6cb5;
@@ -17,6 +35,7 @@
     }
   }
 }
+
 .Screenl {
   width: 100%;
   height: 100%;

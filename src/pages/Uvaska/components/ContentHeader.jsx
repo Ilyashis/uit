@@ -3,55 +3,51 @@ import PropTypes from "prop-types";
 
 import { Layout } from "@consta/uikit/Layout";
 import { Button } from "@consta/uikit/Button";
-import { Select } from "@consta/uikit/Select";
 import { ContextMenu } from "@consta/uikit/ContextMenu";
+import { Select } from "@consta/uikit/Select";
 
 // Icons
 import { IconCursorMouse } from "@consta/icons/IconCursorMouse";
 import { IconFolderOpen } from "@consta/icons/IconFolderOpen";
 import { IconHand } from "@consta/icons/IconHand";
 import { IconShape } from "@consta/icons/IconShape";
+import { IconNodeStep } from "@consta/icons/IconNodeStep";
 import { IconTree } from "@consta/icons/IconTree";
 import { IconWindow } from "@consta/icons/IconWindow";
 import { IconHamburger } from "@consta/uikit/IconHamburger";
-import { IconTable2 } from "@consta/icons/IconTable2";
 import { IconAdd } from "@consta/uikit/IconAdd";
-import { IconNodeStep } from "@consta/icons/IconNodeStep";
-import { IconCheck } from "@consta/icons/IconCheck";
-import { IconSettings } from "@consta/icons/IconSettings";
-
+import { IconCalculator } from "@consta/uikit/IconCalculator";
+import { IconHome } from "@consta/uikit/IconHome";
+import { IconProcessing } from "@consta/uikit/IconProcessing";
 import { trimItemsMock } from "../mock";
 
-const ContentHeaderMobile = forwardRef((props, ref) => {
+const ContentHeader = forwardRef((props, ref) => {
   const {
     tableFullHeight,
     toggleLeftSideModalCalc,
     leftSideActiveModal,
     windowWidth,
     toggleLeftSideModalData,
+    RightSideActiveModal,
+    toggleRightSideModalObject,
     isOpen,
     toggleContextMenu,
     items,
-    renderRightSide,
-    onChange,
-    setLeftSideActiveModal,
-    setTableOpen,
-    setTableHeight,
-    setTableFullHeight,
-    tableOpen,
-    setIsOpen,
     trimValue,
     setTrimValue,
-    isSettingsModalOpen,
+    renderRightSide,
+    onChange,
     setIsSettingsModalOpen,
+    isSettingsModalOpen,
+    setIsOpen,
+    setRightSideActiveModal,
   } = props;
-
   const [isTrimSettingsOpen, setIsTrimSettigsOpen] = useState(false);
 
   const toggleSettingsModal = () => {
     setIsSettingsModalOpen((prev) => !prev);
     setIsOpen(false);
-    setLeftSideActiveModal(null);
+    setRightSideActiveModal(false);
   };
 
   return (
@@ -60,95 +56,41 @@ const ContentHeaderMobile = forwardRef((props, ref) => {
       style={{ backgroundColor: `${tableFullHeight ? "white" : ""}` }}
     >
       <Layout className="home__header-left">
+        <a href="/uit/projects">
+          <Button
+            label="Домой"
+            iconLeft={IconHome}
+            view="ghost"
+            size="xs"
+            onlyIcon
+          />
+        </a>
         <Button
           truncate="true"
           onClick={toggleLeftSideModalCalc}
           className={`home__header--button truncate-btn ${
             leftSideActiveModal == 0 ? "active-button" : ""
           }`}
-          label="Интерпретация №1 длинное название"
+          label="Увязка №1 длинное название"
           iconLeft={IconHamburger}
           view="ghost"
           size="xs"
           onlyIcon={windowWidth <= 800}
         />
+
         <Button
           onClick={toggleLeftSideModalData}
           className={`home__header--button ${
             leftSideActiveModal == 1 ? "active-button" : ""
           }`}
-          label="Данные"
+          label="Инспектор"
           iconLeft={IconTree}
           view="ghost"
           size="xs"
           onlyIcon
         />
-        <Button
-          className={`home__header--button  ${
-            leftSideActiveModal == 2 ? "active-button" : ""
-          }`}
-          label="Обьекты"
-          iconLeft={IconFolderOpen}
-          view="ghost"
-          size="xs"
-          onlyIcon
-          onClick={() => {
-            const active = leftSideActiveModal === 2 ? null : 2;
-            setIsOpen(false);
-            setLeftSideActiveModal(active);
-            setIsSettingsModalOpen(false);
-          }}
-        />
-        <Button
-          className={`home__header--button ${
-            isSettingsModalOpen ? "active-button" : ""
-          }`}
-          label="Настройки"
-          iconLeft={IconSettings}
-          view="ghost"
-          size="xs"
-          onlyIcon
-          onClick={() => toggleSettingsModal()}
-        />
-        <Button
-          onClick={() => {
-            setTableOpen((prev) => !prev);
-
-            if (tableFullHeight) {
-              setTableHeight(0);
-              setTableFullHeight(false);
-            }
-
-            if (tableOpen !== 0) {
-              setTableHeight(0);
-            }
-          }}
-          className={`home__header--button ${tableOpen ? "active-button" : ""}`}
-          label="Таблица"
-          iconLeft={IconTable2}
-          view="ghost"
-          size="xs"
-          onlyIcon
-        />
-        <Button
-          className={`home__header--button  ${isOpen ? "active-button" : ""}`}
-          label="Вид"
-          iconLeft={IconWindow}
-          view="ghost"
-          size="xs"
-          onlyIcon
-          onClick={toggleContextMenu}
-        />
-        <ContextMenu
-          size="xs"
-          isOpen={isOpen}
-          items={items}
-          anchorRef={ref}
-          getItemRightSide={(item) => renderRightSide(item, onChange)}
-          className="view-context-menu"
-        />
       </Layout>
-      <Layout className="home__header-right">
+      <Layout className="home__header-center">
         {!isTrimSettingsOpen ? (
           <>
             <Button
@@ -169,12 +111,11 @@ const ContentHeaderMobile = forwardRef((props, ref) => {
             />
             <Button
               className="home__header--button"
-              label="Trim"
-              iconLeft={IconShape}
+              label="Авто-увязка"
+              iconLeft={IconProcessing}
               view="ghost"
               size="xs"
-              onlyIcon
-              onClick={() => setIsTrimSettigsOpen(true)}
+              //onClick={() => setIsTrimSettigsOpen(true)}
             />
           </>
         ) : (
@@ -200,7 +141,7 @@ const ContentHeaderMobile = forwardRef((props, ref) => {
                 size="xs"
                 value={trimValue}
                 onChange={({ value }) => setTrimValue(value)}
-                style={{ width: !(windowWidth <= 412) ? "100px" : "40px" }}
+                style={{ width: "100px" }}
               />
               <Button
                 className="home__header--button"
@@ -220,39 +161,77 @@ const ContentHeaderMobile = forwardRef((props, ref) => {
               className="home__header--button"
               label="Готово"
               size="xs"
-              iconLeft={windowWidth <= 412 && IconCheck}
-              onlyIcon={windowWidth <= 412}
               onClick={() => setIsTrimSettigsOpen(false)}
             />
           </>
         )}
       </Layout>
+      <Layout className="home__header-right">
+        <Button
+          className={`home__header--button ${
+            RightSideActiveModal ? "active-button" : ""
+          }`}
+          label="Навигатор"
+          iconLeft={IconFolderOpen}
+          view="ghost"
+          size="xs"
+          onlyIcon={windowWidth <= 800}
+          onClick={() => toggleRightSideModalObject()}
+        />
+        <Button
+          className={`home__header--button ${
+            isSettingsModalOpen ? "active-button" : ""
+          }`}
+          label="Калькулятор"
+          iconLeft={IconCalculator}
+          view="ghost"
+          size="xs"
+          onlyIcon
+          onClick={() => toggleSettingsModal()}
+        />
+        <Layout className="home__header-right--border"></Layout>
+        <Button
+          className={`home__header--button ${isOpen ? "active-button" : ""}`}
+          label="Вид"
+          iconLeft={IconWindow}
+          view="ghost"
+          size="xs"
+          onClick={toggleContextMenu}
+        />
+        <ContextMenu
+          size="xs"
+          isOpen={isOpen}
+          items={items}
+          anchorRef={ref}
+          getItemRightSide={(item) => renderRightSide(item, onChange)}
+          className="view-context-menu"
+          style={{ marginLeft: "-12px" }}
+        />
+      </Layout>
     </Layout>
   );
 });
 
-ContentHeaderMobile.propTypes = {
+ContentHeader.propTypes = {
   tableFullHeight: PropTypes.bool,
   toggleLeftSideModalCalc: PropTypes.func,
   leftSideActiveModal: PropTypes.number,
   windowWidth: PropTypes.number,
   toggleLeftSideModalData: PropTypes.func,
+  RightSideActiveModal: PropTypes.bool,
+  toggleRightSideModalObject: PropTypes.func,
   isOpen: PropTypes.bool,
   toggleContextMenu: PropTypes.func,
   items: PropTypes.array,
   renderRightSide: PropTypes.func,
   onChange: PropTypes.func,
-  setLeftSideActiveModal: PropTypes.func,
-  setTableOpen: PropTypes.func,
-  setTableHeight: PropTypes.func,
-  setTableFullHeight: PropTypes.func,
-  tableOpen: PropTypes.bool,
-  setIsOpen: PropTypes.func,
   trimValue: PropTypes.any,
   setTrimValue: PropTypes.func,
-  isSettingsModalOpen: PropTypes.bool,
   setIsSettingsModalOpen: PropTypes.func,
+  isSettingsModalOpen: PropTypes.bool,
+  setIsOpen: PropTypes.func,
+  setRightSideActiveModal: PropTypes.func,
 };
 
-ContentHeaderMobile.displayName = "ContentHeaderMobile";
-export default ContentHeaderMobile;
+ContentHeader.displayName = "ContentHeader";
+export default ContentHeader;

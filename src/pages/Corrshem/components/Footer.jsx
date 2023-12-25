@@ -59,7 +59,6 @@ export default function Footer(props) {
   
 // canvas==============================
 
-
   const canvasRef = useRef(null);
   const [points, setPoints] = useState(generateRandomCoordsAndNames(5));
   const [scale, setScale] = useState(1);
@@ -68,7 +67,6 @@ export default function Footer(props) {
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [selectedPoints, setSelectedPoints] = useState([]); 
 
-  
   const handleCanvasClick = (event) => {
     const canvas = canvasRef.current;
     const rect = canvas.getBoundingClientRect();
@@ -84,7 +82,6 @@ export default function Footer(props) {
       homeScreenDiv.innerText = 'Выбранные точки: ' + clickedPoints.map(point => point.name).join(', ');
     }
   };
-
   const handleMouseWheel = (event) => {
     event.preventDefault();
     const canvas = canvasRef.current;
@@ -147,10 +144,6 @@ export default function Footer(props) {
       homeScreenDiv.innerText = 'Выбрана точка: ' + clickedPoint.name;
     }
   };
-
-
-
-  
   const drawLine = (point1, point2) => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
@@ -159,8 +152,6 @@ export default function Footer(props) {
     ctx.lineTo(point2.x * scale + translate.x, point2.y * scale + translate.y);
     ctx.stroke();
   };
-
-  
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
@@ -185,8 +176,6 @@ export default function Footer(props) {
       );
     });
   }, [points, scale, translate]);
-
-
 
   return (
     <Layout className="home__footer">

@@ -43,41 +43,6 @@ export default function Footer(props) {
     calculateMapLayerPopupWidth = `${windowWidth - 24}`;
   }
 
-  /* Клик на точку с названием. Рисовании линии между точкам.
-//Если точка ставится между ними - линия цепляется за эту точку
-pointGroupRef.current.selectAll(".point")
-  .on("click", function(event, d) {
-    const isActive = d3.select(this).classed("active");
-    if (isActive) {
-      d3.select(this).classed("active", false);
-      d3.select(this).attr("fill", "green");
-      d3.select("#Screll").text(function() {
-        return d3.select("#Screll").text().replace(d.name, "");
-      });
-    } else {
-      d3.select(this).classed("active", true);
-      d3.select(this).attr("fill", "blue");
-      d3.select("#Screll").text(function() {
-        return d3.select("#Screll").text() + " " + d.name;
-      });
-    }
-    const activePoints = pointGroupRef.current.selectAll(".active").data();
-    const line = svg.select("#lines").selectAll("line").remove();
-    if (activePoints.length > 1) {
-      for (let i = 1; i < activePoints.length; i++) {
-        svg.select("#lines")
-          .append("line")
-          .attr("x1", activePoints[i-1].x)
-          .attr("y1", activePoints[i-1].y)
-          .attr("x2", activePoints[i].x)
-          .attr("y2", activePoints[i].y)
-          .attr("stroke", "black");
-      }
-    }
-  });
-  */
-  // canvas==============================
-
   const svgRef = useRef();
   const pointGroupRef = useRef();
   const textGroupRef = useRef();
@@ -127,21 +92,29 @@ pointGroupRef.current.selectAll(".point")
 
     const loadAndRender = async () => {
       try {
-        const importedNode = await d3.xml(
-          "/src/pages/Interpret/mock/isoline.svg"
-        );
+        const importedNode = await d3.xml("/src/pages/Uvaska/mock/isoline.svg");
         const imageNode = importedNode.documentElement;
         zoomGroup.node().appendChild(imageNode);
         zoomGroup.attr("width", width).attr("height", height);
 
         // Точки и линии
-        const points = [];
 
-        for (let i = 1; i <= 40; i++) {
-          const x = Math.floor(Math.random() * 1000);
-          const y = Math.floor(Math.random() * 1000);
-          points.push({ x, y, name: `Well${i}` });
-        }
+        const points = [
+          { x: 74, y: 46, name: " " },
+          { x: 74, y: 96, name: " " },
+          { x: 244, y: 92, name: " " },
+          { x: 4, y: 96, name: " " },
+          { x: 78, y: 200, name: " " },
+          { x: 77, y: 275, name: " " },
+          { x: 140, y: 230, name: " " },
+          { x: 138, y: 92, name: " " },
+          { x: 144, y: 200, name: " " },
+          { x: 136, y: 26, name: " " },
+          { x: 275, y: 20, name: " " },
+          { x: 35, y: 26, name: " " },
+          { x: 230, y: 195, name: " " },
+          { x: 5, y: 200, name: " " },
+        ];
 
         console.log(points);
 

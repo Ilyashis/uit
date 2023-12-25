@@ -1,2 +1,2 @@
-import Home from './Interpret'
-export default Home
+import Interpret from "./Interpret";
+export default Interpret;

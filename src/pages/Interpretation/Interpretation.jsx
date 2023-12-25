@@ -15,9 +15,9 @@ import Footer from "./components/Footer";
 // Mock data
 import { calculationItems, contextMenuItems } from "./mock";
 
-import "./Interpret.style.scss";
+import "./Interpretation.style.scss";
 
-export default function Interpret() {
+export default function Interpretation() {
   // Active Pop up window states
   const [leftSideActiveModal, setLeftSideActiveModal] = useState(null);
   const [RightSideActiveModal, setRightSideActiveModal] = useState(false);
@@ -194,12 +194,15 @@ export default function Interpret() {
           {
             //<img src="/assets/svg/bg-map.svg" />
             //<div className="homeScreeni" id="hScr"></div>
-          }
-          <div className="Screenl" id="Screll">
-            <div className="WellNone" style={{ display: "flex" }}>
-              Выберите в мини-карте скважины и добавьте дополнительные объекты
-              из навигатора
+          }{" "}
+          <div className="ScreenItem">
+            <div className="InterpretationNone" style={{ display: "flex" }}>
+              Выберите сьемку в мини-карте для интерпретации
             </div>
+            <div
+              className="ScreenItemInterpretation"
+              id="iDScreenItemInterpretation"
+            ></div>
           </div>
           <Layout direction="column" className="home__content">
             {windowWidth >= 640 ? (

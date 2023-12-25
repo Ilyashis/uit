@@ -15,9 +15,9 @@ import Footer from "./components/Footer";
 // Mock data
 import { calculationItems, contextMenuItems } from "./mock";
 
-import "./Interpret.style.scss";
+import "./Uvaska.style.scss";
 
-export default function Interpret() {
+export default function Uvaska() {
   // Active Pop up window states
   const [leftSideActiveModal, setLeftSideActiveModal] = useState(null);
   const [RightSideActiveModal, setRightSideActiveModal] = useState(false);
@@ -195,10 +195,10 @@ export default function Interpret() {
             //<img src="/assets/svg/bg-map.svg" />
             //<div className="homeScreeni" id="hScr"></div>
           }
-          <div className="Screenl" id="Screll">
+          <div className="Screenluv" id="Screll">
             <div className="WellNone" style={{ display: "flex" }}>
-              Выберите в мини-карте скважины и добавьте дополнительные объекты
-              из навигатора
+              Выделите композитный разрез по точкам в мини-карте для увязки из
+              навигатора
             </div>
           </div>
           <Layout direction="column" className="home__content">
