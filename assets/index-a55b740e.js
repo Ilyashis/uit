@@ -41372,7 +41372,7 @@ function C3(e) {
       z.call(M),
         (async () => {
           try {
-            const R = (await i3("./images/isoline.svg")).documentElement;
+            const R = (await i3("./assets/images/isoline.svg")).documentElement;
             _.node().appendChild(R), _.attr("width", 500).attr("height", 500);
             const D = [];
             for (let k = 1; k <= 40; k++) {
@@ -49070,7 +49070,7 @@ function P3(e) {
       z.call(M),
         (async () => {
           try {
-            const R = (await i3("./images/isoline2.svg")).documentElement;
+            const R = (await i3("./assets/images/isoline2.svg")).documentElement;
             _.node().appendChild(R), _.attr("width", 500).attr("height", 500);
             const D = [
               { x: 74, y: 46, name: " " },
