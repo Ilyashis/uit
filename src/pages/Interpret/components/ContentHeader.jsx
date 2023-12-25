@@ -18,6 +18,7 @@ import { IconHamburger } from "@consta/uikit/IconHamburger";
 import { IconAdd } from "@consta/uikit/IconAdd";
 import { IconCalculator } from "@consta/uikit/IconCalculator";
 import { IconHome } from "@consta/uikit/IconHome";
+import { Link } from "react-router-dom";
 
 import { trimItemsMock } from "../mock";
 
@@ -56,7 +57,7 @@ const ContentHeader = forwardRef((props, ref) => {
       style={{ backgroundColor: `${tableFullHeight ? "white" : ""}` }}
     >
       <Layout className="home__header-left">
-        <a href="/uit/projects">
+        <Link to="/projects">
           <Button
             label="Домой"
             iconLeft={IconHome}
@@ -64,14 +65,14 @@ const ContentHeader = forwardRef((props, ref) => {
             size="xs"
             onlyIcon
           />
-        </a>
+        </Link>
         <Button
           truncate="true"
           onClick={toggleLeftSideModalCalc}
           className={`home__header--button truncate-btn ${
             leftSideActiveModal == 0 ? "active-button" : ""
           }`}
-          label="Интерпретация №1 длинное название"
+          label="Корр-схема №1 длинное название"
           iconLeft={IconHamburger}
           view="ghost"
           size="xs"

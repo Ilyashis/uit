@@ -6,6 +6,7 @@ import { Text } from "@consta/uikit/Text";
 import { Icon } from "@consta/uikit/Icon";
 import { IconArrowLeft } from "@consta/icons/IconArrowLeft";
 import { IconArrowRight } from "@consta/icons/IconArrowRight";
+import { Link } from "react-router-dom";
 
 export default function Projects() {
   return (
@@ -15,7 +16,7 @@ export default function Projects() {
         style={{ margin: "24px auto", width: "1200px" }}
       >
         <Layout flex={1}>
-          <a href="/uit">
+          <Link to="/">
             <Button
               label="Открыть"
               iconLeft={IconArrowLeft}
@@ -23,7 +24,7 @@ export default function Projects() {
               onlyIcon={true}
               view="ghost"
             />
-          </a>
+          </Link>
           <h3 style={{ marginLeft: "12px" }}>Тестовый проект №2</h3>
         </Layout>
 
@@ -45,9 +46,9 @@ export default function Projects() {
             <Layout>---</Layout>
             <br />
             <Layout>
-              <a href="/uit/uvaska">
+              <Link to="/projects/uvaska">
                 <Button label="Открыть" iconRight={IconArrowRight} size="xs" />
-              </a>
+              </Link>
             </Layout>
           </Card>
           <Card
@@ -67,9 +68,9 @@ export default function Projects() {
             <Layout>---</Layout>
             <br />
             <Layout>
-              <a href="/uit/cube3d">
+              <Link to="/projects/cube3d">
                 <Button label="Открыть" iconRight={IconArrowRight} size="xs" />
-              </a>
+              </Link>
             </Layout>
           </Card>
         </Layout>
@@ -91,9 +92,9 @@ export default function Projects() {
             <Layout>---</Layout>
             <br />
             <Layout>
-              <a href="/uit/interpretation">
+              <Link to="/projects/interpretation">
                 <Button label="Открыть" iconRight={IconArrowRight} size="xs" />
-              </a>
+              </Link>
             </Layout>
           </Card>{" "}
           <Card
@@ -113,9 +114,9 @@ export default function Projects() {
             <Layout>---</Layout>
             <br />
             <Layout>
-              <a href="/uit/interpret">
+              <Link to="/projects/interpret">
                 <Button label="Открыть" iconRight={IconArrowRight} size="xs" />
-              </a>
+              </Link>
             </Layout>
           </Card>
         </Layout>

@@ -7,6 +7,7 @@ import { Text } from "@consta/uikit/Text";
 import { Icon } from "@consta/uikit/Icon";
 import { IconArrowLeft } from "@consta/icons/IconArrowLeft";
 import { IconArrowRight } from "@consta/icons/IconArrowRight";
+import { Link } from "react-router-dom";
 
 export default function Indexpage() {
   return (
@@ -32,9 +33,9 @@ export default function Indexpage() {
             <Layout>ГПН-Хантос</Layout>
             <br />
             <Layout>
-              <a href="/uit/projects">
+              <Link to="/projects">
                 <Button label="Открыть" iconRight={IconArrowRight} size="xs" />
-              </a>
+              </Link>
             </Layout>
           </Card>
         </Layout>
@@ -51,9 +52,9 @@ export default function Indexpage() {
             <Layout>ГПН-Хантос</Layout>
             <br />
             <Layout>
-              <a href="/uit/projects">
+              <Link to="/projects">
                 <Button label="Открыть" iconRight={IconArrowRight} size="xs" />
-              </a>
+              </Link>
             </Layout>
           </Card>
         </Layout>
@@ -70,9 +71,9 @@ export default function Indexpage() {
             <Layout>ГПН-Хантос</Layout>
             <br />
             <Layout>
-              <a href="/uit/projects">
+              <Link to="/projects">
                 <Button label="Открыть" iconRight={IconArrowRight} size="xs" />
-              </a>
+              </Link>
             </Layout>
           </Card>
         </Layout>

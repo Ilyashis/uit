@@ -20,6 +20,7 @@ import { IconCalculator } from "@consta/uikit/IconCalculator";
 import { IconHome } from "@consta/uikit/IconHome";
 import { IconProcessing } from "@consta/uikit/IconProcessing";
 import { trimItemsMock } from "../mock";
+import { Link } from "react-router-dom";
 
 const ContentHeader = forwardRef((props, ref) => {
   const {
@@ -56,7 +57,7 @@ const ContentHeader = forwardRef((props, ref) => {
       style={{ backgroundColor: `${tableFullHeight ? "white" : ""}` }}
     >
       <Layout className="home__header-left">
-        <a href="/uit/projects">
+        <Link to="/projects">
           <Button
             label="Домой"
             iconLeft={IconHome}
@@ -64,7 +65,7 @@ const ContentHeader = forwardRef((props, ref) => {
             size="xs"
             onlyIcon
           />
-        </a>
+        </Link>
         <Button
           truncate="true"
           onClick={toggleLeftSideModalCalc}

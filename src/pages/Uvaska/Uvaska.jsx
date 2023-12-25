@@ -11,6 +11,7 @@ import ContentHeader from "./components/ContentHeader";
 import ContentHeaderMobile from "./components/ContentHeaderMobile";
 import ContentMiddle from "./components/ContentMiddle";
 import Footer from "./components/Footer";
+import { Link } from "react-router-dom";
 
 // Mock data
 import { calculationItems, contextMenuItems } from "./mock";
@@ -55,7 +56,7 @@ export default function Uvaska() {
 
   // Trim value state
   const [trimValue, setTrimValue] = useState({
-    label: "Слой 1",
+    label: "Горизонт 1",
     id: 1,
   });
 
