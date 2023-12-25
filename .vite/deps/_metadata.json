@@ -1,23 +1,23 @@
 {
-  "hash": "06634fda",
-  "browserHash": "595db7a1",
+  "hash": "3b2c3974",
+  "browserHash": "90284408",
   "optimized": {
     "@consta/uikit/Theme": {
       "src": "../../node_modules/@consta/uikit/Theme/index.js",
       "file": "@consta_uikit_Theme.js",
-      "fileHash": "95969477",
+      "fileHash": "69cc5d58",
       "needsInterop": false
     },
     "react-dom/client": {
       "src": "../../node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "a5653e94",
+      "fileHash": "4b77d864",
       "needsInterop": true
     },
     "react-router-dom": {
       "src": "../../node_modules/react-router-dom/dist/index.js",
       "file": "react-router-dom.js",
-      "fileHash": "f59b820f",
+      "fileHash": "86cd4831",
       "needsInterop": false
     }
   },
